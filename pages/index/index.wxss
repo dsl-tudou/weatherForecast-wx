@@ -1,0 +1,31 @@
+/**index.wxss**/
+page {
+  height: 100%;
+}
+.canvas_class {
+  width: 100%;
+  height: 70%;
+}
+.weather {
+  display: flex;
+  height: 30%;
+}
+.day_weather {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: space-around;
+}
+.weather_icon {
+  width: 70rpx;
+  height: 70rpx;
+}
+.weather_font {
+  color: #a1a2a2;
+  font-size: 32rpx;
+}
+.selected_day_weather {
+  background-color: #fff7f5;
+}

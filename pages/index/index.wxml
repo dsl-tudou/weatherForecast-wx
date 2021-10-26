@@ -1,0 +1,30 @@
+<!-- index.wxml -->
+<canvas canvas-id="myCanvas1" class="canvas_class" />
+<view class='weather'>
+  <block wx:for="{{daily_forecast}}" wx:key="unique">
+    <view class="day_weather {{index==0?'selected_day_weather':''}}">
+      <text class='weather_font'>{{week[week_index[index]]}}</text>
+      <image src='images/sunny.png' class='weather_icon' wx:if="{{item.cond_code_d==100}}"></image>
+      <image src='images/cloudy.png' class='weather_icon' wx:elif="{{item.cond_code_d==101|item.cond_code_d==102|item.cond_code_d==103}}"></image>
+      <image src='images/overcast.png' class='weather_icon' wx:elif="{{item.cond_code_d==104}}"></image>
+      <image src='images/shower_rain.png' class='weather_icon' wx:elif="{{item.cond_code_d==300}}"></image>
+      <image src='images/thundershower.png' class='weather_icon' wx:elif="{{item.cond_code_d==302}}"></image>
+      <image src='images/light_rain.png' class='weather_icon' wx:elif="{{item.cond_code_d==305}}"></image>
+      <image src='images/moderate_rain.png' class='weather_icon' wx:elif="{{item.cond_code_d==306}}"></image>
+      <image src='images/heavy_rain.png' class='weather_icon' wx:elif="{{item.cond_code_d==307}}"></image>
+      <image src='images/storm.png' class='weather_icon' wx:elif="{{item.cond_code_d==310}}"></image>
+      <image src='images/severe_storm.png' class='weather_icon' wx:elif="{{item.cond_code_d==311||item.cond_code_d==312}}"></image>
+      <image src='images/light_snow.png' class='weather_icon' wx:elif="{{item.cond_code_d==400}}"></image>
+      <image src='images/moderate_snow.png' class='weather_icon' wx:elif="{{item.cond_code_d==401}}"></image>
+      <image src='images/heavy_snow.png' class='weather_icon' wx:elif="{{item.cond_code_d==402}}"></image>
+      <image src='images/snowstorm.png' class='weather_icon' wx:elif="{{item.cond_code_d==403}}"></image>
+      <image src='images/sleet.png' class='weather_icon' wx:elif="{{item.cond_code_d==404||item.cond_code_d==405||item.cond_code_d==406}}"></image>
+      <image src='images/snow_flurry.png' class='weather_icon' wx:elif="{{item.cond_code_d==407}}"></image>
+      <image src='images/foggy.png' class='weather_icon' wx:elif="{{item.cond_code_d==501}}"></image>
+      <image src='images/haze.png' class='weather_icon' wx:elif="{{item.cond_code_d==502}}"></image>
+      <image src='images/dust_storm.png' class='weather_icon' wx:elif="{{item.cond_code_d==507||item.cond_code_d==508}}"></image>
+      <text class='weather_font'>{{item.tmp_min}}℃</text>
+      <text class='weather_font'>{{item.tmp_max}}℃</text>
+    </view>
+  </block>
+</view>
